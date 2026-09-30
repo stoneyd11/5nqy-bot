@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5nqy_devbot Settings</title><link rel="stylesheet" href="settings.css"></head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark"><img src="assets/brand-icon.png" alt=""></div><div><div class="brand-name">5nqy_devbot</div><div class="brand-sub">Developer AI control centre</div></div></div>
+      <div class="top-actions"><span id="save-state" class="save-state">All changes saved</span><button id="reset" class="ghost">Reset</button></div>
+    </header>
+    <div class="layout">
+      <nav class="sidebar" aria-label="Settings navigation">
+        <button class="nav active" data-section="general">General</button>
+        <button class="nav" data-section="providers">AI providers</button>
+        <button class="nav" data-section="workflow">Developer workflow</button>
+        <button class="nav" data-section="shortcuts">Shortcuts</button>
+        <button class="nav" data-section="about">About</button>
+      </nav>
+      <main class="content">
+        <section id="general" class="section active"><h1>General</h1><p class="lead">Configure how 5nqy_devbot behaves across supported AI chats.</p>
+          <div class="grid two"><label class="field"><span>Preferred provider</span><select id="preferredProvider"></select></label><label class="field"><span>Preferred model</span><input id="preferredModel" placeholder="Provider default"></label></div>
+          <div class="card"><div class="row"><div><b>Theme</b><div class="muted">Match the monochrome reference identity or follow the page.</div></div><select id="theme"><option value="dark">Dark</option><option value="light">Light</option></select></div>
+          <label class="toggle"><input type="checkbox" id="notifications"><span>Desktop-style in-page notifications</span></label>
+          <label class="toggle"><input type="checkbox" id="showProviderBadges"><span>Show provider capability badges</span></label>
+          <label class="toggle"><input type="checkbox" id="compactMode"><span>Use compact controls</span></label></div>
+        </section>
+        <section id="providers" class="section"><h1>AI providers</h1><p class="lead">Native adapters get site-specific logic. Compatibility adapters are isolated and fail safely when the page changes.</p><div id="provider-list" class="provider-list"></div></section>
+        <section id="workflow" class="section"><h1>Developer workflow</h1><p class="lead">Keep coding sessions predictable and recoverable.</p>
+          <div class="card"><label class="toggle"><input type="checkbox" id="automationEnabled"><span>Allow AI-to-Studio automation</span></label><label class="toggle"><input type="checkbox" id="autoResume"><span>Auto-resume incomplete tool replies</span></label><label class="toggle"><input type="checkbox" id="experimentalProviders"><span>Show experimental / generic providers</span></label></div>
+          <div class="card"><h3>⚡ Ultra AI</h3><p class="muted">Fan one task out to multiple independent workers, judge their reports, then give the merged blueprint to a final builder.</p><div class="grid two"><label class="field"><span>Worker rounds</span><select id="ultraAiRounds"><option value="3">3</option><option value="5">5</option><option value="7">7</option></select></label><label class="field"><span>Strategy</span><select id="ultraAiStrategy"><option value="auto">Auto role routing</option><option value="single">Preferred provider first</option></select></label></div><label class="toggle"><input type="checkbox" id="ultraAiEnabled"><span>Enable Ultra AI</span></label></div>
+          <div class="card"><h3>Auto provider swap</h3><p class="muted">When a provider reports a quota/limit or becomes unavailable, 5nqy_devbot can route the next worker to another enabled provider.</p><label class="toggle"><input type="checkbox" id="autoSwapEnabled"><span>Enable automatic provider swapping</span></label><label class="toggle"><input type="checkbox" id="autoSwapOnLimit"><span>Swap on quota / daily limit</span></label><label class="toggle"><input type="checkbox" id="autoSwapOnOffline"><span>Swap when not logged in / unavailable</span></label></div>
+          <div class="card"><h3>Roblox workflow</h3><p class="muted">Roblox Studio remains the primary MCP target. The existing command protocol and project-memory workflow are preserved. Ultra AI's final builder can inspect and edit real Studio state rather than guessing.</p></div>
+        </section>
+        <section id="shortcuts" class="section"><h1>Shortcuts</h1><p class="lead">Browser-level shortcuts are kept minimal so they do not conflict with site shortcuts.</p><div class="shortcut"><kbd>Ctrl</kbd><span>+</span><kbd>Shift</kbd><span>+</span><kbd>Y</kbd><b>Toggle 5nqy_devbot panel</b></div></section>
+        <section id="about" class="section"><h1>About</h1><p class="lead">A modular browser-based developer assistant for coding and Roblox workflows.</p><div class="card about-card"><img src="assets/reference.png" alt="5nqy_devbot branding reference"><div><b>5nqy_devbot</b><p class="muted">Version <span id="version"></span>. Provider-specific automation remains isolated so one website changing does not bring down the rest of the extension.</p></div></div></section>
+      </main>
+    </div>
+  </div>
+  <script src="core/settings-core.js"></script><script src="core/provider-registry.js"></script><script src="settings.js"></script>
+</body></html>

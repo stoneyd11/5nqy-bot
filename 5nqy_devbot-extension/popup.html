@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>5nqy_devbot</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{width:420px;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#060606;color:#f4f4f4}.shell{padding:14px}.hero{display:flex;align-items:center;gap:11px;padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.13);background:linear-gradient(140deg,#171717,#0b0b0b)}.logo{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.55);padding:2px}.logo img{width:100%;height:100%;border-radius:50%;object-fit:cover}.name{font-weight:850;letter-spacing:.02em}.sub{font-size:11px;color:#8b8b8b;margin-top:2px}.status{display:flex;align-items:center;gap:8px;margin-top:12px}.dot{width:8px;height:8px;border-radius:50%;background:#555}.dot.on{background:#eee;box-shadow:0 0 10px rgba(255,255,255,.35)}.dot.warn{background:#aaa}.state{font-size:11px;color:#cfcfcf}.metric{margin:10px 0;padding:10px 11px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:#0d0d0d}.metric b{display:block;font-size:12px}.servers{white-space:pre-line;font-family:ui-monospace,SFMono-Regular,monospace;font-size:9px;color:#777;margin-top:6px}.tabs{display:flex;gap:6px;margin:10px 0}.tab{flex:1;background:#0d0d0d;border:1px solid rgba(255,255,255,.11)}.tab.active{background:#ededed;color:#111;font-weight:800}.panel{display:none}.panel.active{display:block}.ultra{margin-top:0;padding:12px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:linear-gradient(145deg,#101010,#090909)}.ultra-head{display:flex;justify-content:space-between;align-items:center}.ultra-title{font-size:13px;font-weight:850}.pill{font-size:9px;padding:3px 7px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:#aaa}.task{width:100%;min-height:92px;resize:vertical;margin-top:9px;padding:9px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#080808;color:#eee;outline:none;font:11px/1.45 inherit}.row{display:flex;gap:7px;margin-top:8px}.row>*{flex:1}select,button{border:1px solid rgba(255,255,255,.11);border-radius:9px;padding:9px;background:#111;color:#eee;cursor:pointer;font-size:11px}button:hover{background:#1a1a1a}button:disabled{opacity:.5;cursor:not-allowed}.primary{background:#f1f1f1;color:#111;font-weight:750}.primary:hover{background:#fff}.progress{margin-top:8px;font-size:10px;color:#999;line-height:1.4;min-height:14px}.result{margin-top:7px;max-height:150px;overflow:auto;padding:8px;border-radius:9px;background:#080808;border:1px solid rgba(255,255,255,.07);font-size:9px;line-height:1.4;white-space:pre-wrap;color:#bbb}.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}button.wide{grid-column:1/-1}.foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:9px;color:#666}.link{border:0;padding:0;width:auto;background:transparent;color:#aaa;text-decoration:underline}.hint{margin-top:8px;font-size:9px;color:#666;line-height:1.4}.history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.history-title{font-size:13px;font-weight:850}.history-actions{display:flex;gap:6px}.history-actions button{padding:7px 8px;font-size:10px}.jobs{display:flex;flex-direction:column;gap:7px;max-height:430px;overflow:auto}.job-card{border:1px solid rgba(255,255,255,.1);background:#0d0d0d;border-radius:12px;padding:9px}.job-top{display:flex;align-items:flex-start;gap:8px}.job-main{flex:1;min-width:0}.job-title{font-size:11px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.job-meta{font-size:9px;color:#888;margin-top:3px}.job-stage{font-size:10px;color:#c8c8c8;margin-top:7px}.job-bar{height:4px;border-radius:999px;background:#171717;margin-top:6px;overflow:hidden}.job-fill{height:100%;background:#dedede}.job-actions{display:flex;gap:5px;margin-top:7px}.job-actions button{flex:1;padding:6px;font-size:9px}.mini-stop{max-width:72px}.empty{padding:20px 8px;text-align:center;color:#777;font-size:10px;border:1px dashed rgba(255,255,255,.1);border-radius:12px}.saved-note{font-size:9px;color:#666;margin-top:7px}.detail{margin-top:8px;padding:8px;border-radius:10px;background:#080808;border:1px solid rgba(255,255,255,.07);font-size:9px;line-height:1.45;color:#bbb;white-space:pre-wrap;max-height:160px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="hero"><div class="logo"><img src="assets/brand-icon.png" alt=""></div><div><div class="name">5nqy_devbot</div><div class="sub">Multi-AI developer assistant</div></div></div>
+  <div class="status"><span id="dot" class="dot"></span><span id="state" class="state">Checking bridge…</span></div>
+  <div class="metric"><b id="tools">Checking tools…</b><div id="servers" class="servers"></div></div>
+
+  <div class="tabs"><button id="run-tab" class="tab active">Run</button><button id="chats-tab" class="tab">Chats <span id="chat-count">0</span></button></div>
+
+  <section id="run-panel" class="panel active">
+    <section class="ultra"><div class="ultra-head"><span class="ultra-title">⚡ Ultra AI</span><span id="ultra-pill" class="pill">MULTI-AGENT</span></div>
+      <textarea id="task" class="task" placeholder="Tell Ultra AI what you want. Example: Fix game.ServerScriptService.Services.DataService until the Roblox project is clean, verify the fix, then report exactly what changed."></textarea>
+      <div class="row"><select id="rounds" aria-label="Number of agents"><option value="3">3 agents</option><option value="5" selected>5 agents</option><option value="7">7 agents</option></select><button id="run-ultra" class="primary">Run Ultra AI</button></div>
+      <button id="fix-data" class="wide" style="margin-top:7px">🛠 Fix DataService → 0 verified errors</button>
+      <div id="progress" class="progress"></div><div id="result" class="result" hidden></div>
+    </section>
+    <div class="grid"><button id="reconnect">Reconnect</button><button id="restart">Restart Studio bridge</button><button id="settings" class="wide">Open settings</button></div>
+    <div class="foot"><span id="ver"></span><button id="support" class="link">Support</button></div>
+    <div class="hint">Runs and progress are saved locally. Close this popup and reopen it to return to the same stage, results and stop controls.</div>
+  </section>
+
+  <section id="chats-panel" class="panel">
+    <div class="history-head"><span class="history-title">Saved Chats</span><div class="history-actions"><button id="stop-all">■ Stop all</button><button id="refresh-chats">Refresh</button></div></div>
+    <div class="saved-note">Each saved run keeps its task, stage, providers, progress and final report.</div>
+    <div id="jobs" class="jobs" style="margin-top:8px"></div>
+    <div id="selected-detail" class="detail" hidden></div>
+  </section>
+</div>
+<script src="popup.js"></script>
+</body>
+</html>
